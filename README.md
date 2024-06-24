@@ -35,7 +35,7 @@ There are 3 main folders in this GitHub repository:
 
 1. Data: This folder contains all pertinent information regarding the data used for the analysis presented in this study. Details about the HCP dataset can be found here.
 
-2. Scripts: This folder contains all the relevant scripts/code used for the analysis in this study.
+2. Code: This folder contains all the relevant scripts/code used for the analysis in this study.
 
 3. Figures: This folder contains the figures from the manuscript. 
 
