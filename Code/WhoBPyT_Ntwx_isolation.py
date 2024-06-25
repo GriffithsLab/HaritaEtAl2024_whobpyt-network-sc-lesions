@@ -99,7 +99,7 @@ print('Data loaded')
 
 # # FOR REST DATA!
 
-# data_path = '/external/rprshnas01/netdata_kcni/jglab/MemberSpaces/Data/Shrey/WhoBPyT/200_subjects_WhoBPyT_run_pkls_real_and_fake_time'
+# data_path = '/external/rprshnas01/netdata_kcni/jglab/MemberSpaces/Data/Shrey/WhoBPyT/200_subjects_WhoBPyT_run_pkls_real_time'
 # pconn_path = '/external/rprshnas01/netdata_kcni/jglab/MemberSpaces/Data/Shrey/Shrey_SS_parcellated_Func_Conns_II/'
 
 
@@ -180,7 +180,8 @@ ntwx_iso_fc_con_mat = np.corrcoef(ntwx_iso_data.output_sim.bold_test)
 
 output_path = '/external/rprshnas01/netdata_kcni/jglab/MemberSpaces/Data/Shrey/WhoBPyT/Ntwx_Lesion_TASK_WhoBPyT_real_time_pkls_and_conn_mats'
 
-np.savetxt(output_path + '/Subj_{0}_{1}_lesion_{2}_task_fc_con_mat.txt'.format(sub_id, ntwx_name, task_choice), ntwx_iso_fc_con_mat)
+np.savetxt(output_path + '/Subj_{0}_{1}_lesion_{2}_fc_con_mat.txt'.format(sub_id, ntwx_name, task_choice), ntwx_iso_fc_con_mat) 
+# The above save file is for task and rest. You can change the name of the output save file to reflect this. My naming conventions are trash. please excuse my insolence!
 
 lesion_g = ntwx_iso_data.output_sim.g
 lesion_g_EE = ntwx_iso_data.output_sim.g_EE
@@ -198,9 +199,7 @@ with open(output_path + '/Subj_{0}_{1}_lesion_{2}_task_fc_con_mat.pkl'.format(su
 
 # # REST fMRI outputs
 
-# # output_path = '/external/rprshnas01/netdata_kcni/jglab/MemberSpaces/Data/Shrey/WhoBPyT/Ntwx_Lesion_WhoBPyT_200_subs_fake_time'
-
-# output_path = '/external/rprshnas01/netdata_kcni/jglab/MemberSpaces/Data/Shrey/WhoBPyT/200_subjects_WhoBPyT_run_pkls_fake_then_real_time'
+# output_path = '/external/rprshnas01/netdata_kcni/jglab/MemberSpaces/Data/Shrey/WhoBPyT/200_subjects_WhoBPyT_run_pkls_real_time'
 
 # np.savetxt(output_path + '/Subj_{0}_{1}_lesion_rest_fc_con_mat.txt'.format(sub_id, ntwx_name), ntwx_iso_fc_con_mat)
 
