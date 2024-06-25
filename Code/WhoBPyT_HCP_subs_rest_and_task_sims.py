@@ -80,7 +80,7 @@ num_epoches = 60 #40 #20 #50
 batch_size = 60 #20 for resting-state
 step_size = 0.04
 input_size = 2
-tr = 0.72 #2.0 # the correct TR for HCP is 720 msec not 2 seconds!
+tr = 0.72 
 repeat_size = 5
 
 print("Set options ...")
@@ -106,16 +106,18 @@ print("Loaded SC ...")
 # ----------------------------------------------------------------------------------------------------------------
 
 # Load FC
+rest_pconn_path = '/external/rprshnas01/netdata_kcni/jglab/MemberSpaces/Data/Shrey/Shrey_SS_parcellated_Func_Conns_II/'
+task_pconn_path = '/external/rprshnas01/netdata_kcni/jglab/MemberSpaces/Data/Shrey/Shrey_SS_parcellated_Func_Conns_IV/'
+# The above paths contain parcellated empirical fMRI data. See the connectome workbench script for more information.  
 
-pconn_path = '/external/rprshnas01/netdata_kcni/jglab/MemberSpaces/Data/Shrey/Shrey_SS_parcellated_Func_Conns_IV/'
-# The above path contains parcellated empirical fMRI data. See the connectome workbench script for more information.  
-
-if task_choice == 'MOTOR':
-    pconn1LR = pconn_path + '{0}_tfMRI_MOTOR_RL_200Schaefer_7Ntwx_cifti_parcellated.ptseries.nii'.format(sub_id)
+if task_choice == 'REST':
+    pconn1LR = rest_pconn_path + '{0}_rfMRI_REST1_RL_Schaefer200_cifti_parcellated.ptseries.nii'.format(sub_id)
+elif task_choice == 'MOTOR':
+    pconn1LR = task_pconn_path + '{0}_tfMRI_MOTOR_RL_200Schaefer_7Ntwx_cifti_parcellated.ptseries.nii'.format(sub_id)
 elif task_choice == 'WM':
-    pconn1LR = pconn_path + '{0}_tfMRI_WM_RL_200Schaefer_7Ntwx_cifti_parcellated.ptseries.nii'.format(sub_id)
+    pconn1LR = task_pconn_path + '{0}_tfMRI_WM_RL_200Schaefer_7Ntwx_cifti_parcellated.ptseries.nii'.format(sub_id)
 elif task_choice == 'LANGUAGE':
-    pconn1LR = pconn_path + '{0}_tfMRI_LANGUAGE_RL_200Schaefer_7Ntwx_cifti_parcellated.ptseries.nii'.format(sub_id)
+    pconn1LR = task_pconn_path + '{0}_tfMRI_LANGUAGE_RL_200Schaefer_7Ntwx_cifti_parcellated.ptseries.nii'.format(sub_id)
 else:
     print('Error!! Task specified is invalid!')
     sys.exit(1)
@@ -178,7 +180,7 @@ print("Finished running WhoBPyT ...")
 
 # output_path = '/external/rprshnas01/netdata_kcni/jglab/MemberSpaces/Data/Shrey/WhoBPyT/200_subjects_WhoBPyT_task_run_pkls_real_time'
 
-filename = output_path + '/Subj_{0}_fittingresults_{1}_task_stim_exp.pkl'.format(sub_id, task_choice)
+filename = output_path + '/Subj_{0}_fittingresults_{1}_stim_exp.pkl'.format(sub_id, task_choice)
 
 with open(filename, 'wb') as f:
     pickle.dump(F, f)
