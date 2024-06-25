@@ -10,4 +10,4 @@ Here you can find all the relevant code used to analyze the data and arrive at t
 
 4) The `WhoBPyT_Code` folder contains the relevant functions used in (2) and (3) to carry out the simulations.
    
-5) The `Ntwx_interactions_after_SC_lesions_resting_state.ipynb` jupyter notebook shows how to get the results obtained in the study. Figures 4, 5, 6, 7 A, and B can be obtained from this notebook. However, please note that this notebook uses resting-state data only (Figure 4). If you want to generate the figures for task data (Figures 5-7), you can use the same code in this notebook, but please CHANGE the data path to the corresponding task data.
+5) The `Ntwx_interactions_after_SC_lesions_resting_state.ipynb` jupyter notebook shows how to get the results obtained in the study. Figures 4, 5, 6, and 7 (panels A and B) can be obtained from this notebook. However, please note that this notebook uses resting-state data only (Figure 4). If you want to generate the figures for task data (Figures 5-7), you can use the same code in this notebook, but please CHANGE the data path to the corresponding task data.
