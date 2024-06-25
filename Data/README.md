@@ -6,6 +6,6 @@ More information about the Human Connectome Project (HCP) and the data releases 
 
 For more information, please refer to the *Methods* section of the manuscript. 
 
-The `SC_weights` folder contains the structural connectivity weights used for the modelling analysis. 
+The `SC_Weights` folder contains the structural connectivity weights used for the modelling analysis. 
 
 Subject IDs of the 200 subjects (120 F; 80 M) from the HCP database can be found in the `subject_ids.txt` file.
